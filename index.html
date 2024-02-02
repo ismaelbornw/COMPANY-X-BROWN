@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X BROWN TECNOLOGÍA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>X BROWN TECNOLOGÍA</h1>
+        <p>Fundador: Ismael Brown</p>
+        <nav>
+            <ul>
+           
+    <section id="inicio">
+        <h2>Bienvenido a X BROWN </h2>
+        <p>Explora las últimas noticias, reseñas y tutoriales en el mundo de la tecnología.</p>
+    </section>
+
+    <section id="historia">
+        <h2>Historia</h2>
+        <p>X BROWN TECNOLOGÍA fue fundada por Ismael Brown con la visión de proporcionar soluciones innovadoras en el ámbito tecnológico. Desde su inicio en 2022, la empresa ha crecido constantemente, ganando reconocimiento por sus productos y servicios de vanguardia.</p>
+        <p>La filosofía de la empresa se centra en  tecnologia y otras areas</p>
+        <p>En el transcurso de los años ismael brown siempre estuvo interesado en la evolucion de la tecnologia.</p>
+        <!-- Puedes seguir ampliando la historia de la empresa -->
+    </section>
+
+    <section id="tecnologia">
+        <h2>Tecnología de Ismael Brown</h2>
+        <p>Ismael Brown, el fundador de X BROWN, es un apasionado de la innovación tecnológica. Ha liderado el desarrollo de diversas tecnologías revolucionarias, incluyendo X BROWN</p>
+        <ul>
+            <li>Sistema de Inteligencia Artificial</li>
+            <li>Plataforma de...</li>
+            <li>Dispositivos...</li>
+        </ul>
+        <p> La visión de Ismael es increible el joven esta desarrollando programas tecnologicas.</p>
+        <!-- Puedes añadir más detalles sobre las contribuciones tecnológicas de Ismael Brown -->
+    </section>
+
+    <!-- Secciones de noticias, reseñas, tutoriales y contacto -->
+
+    <footer>
+        <p>&copy; 2024 X BROWN TECNOLOGÍA. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
+<header>
+ <img src= c:\Users\ismae\Downloads\jbhbnb.jpg alt="">
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Visualización de Datos</title>
+        <!-- Agrega la referencia a la biblioteca D3.js -->
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+    </head>
+    <body>
+    
+        <h2>Impacto en el Mercado</h2>
+    
+        <!-- Contenedor para la visualización de datos -->
+        <div id="grafico"></div>
+    
+        <script>
+            // Datos de ejemplo (reemplázalos con datos reales)
+            const datos = [
+                { categoria: 'Categoría 1', valor: 30 },
+                { categoria: 'Categoría 2', valor: 50 },
+                { categoria: 'Categoría 3', valor: 20 }
+            ];
+    
+            // Dimensiones del gráfico
+            const ancho = 400;
+            const alto = 300;
+    
+            // Escala lineal para el eje y
+            const escalaY = d3.scaleLinear()
+                .domain([0, d3.max(datos, d => d.valor)])
+                .range([alto, 0]);
+    
+            // Configuración del contenedor del gráfico
+            const svg = d3.select("#grafico")
+                .append("svg")
+                .attr("width", ancho)
+                .attr("height", alto);
+    
+            // Barras del gráfico
+            svg.selectAll("rect")
+                .data(datos)
+                .enter()
+                .append("rect")
+                .attr("x", (d, i) => i * (ancho / datos.length))
+                .attr("y", d => escalaY(d.valor))
+                .attr("width", ancho / datos.length - 5)
+                .attr("height", d => alto - escalaY(d.valor))
+                .attr("fill", "blue");
+    
+            // Eje x
+            svg.selectAll("text")
+                .data(datos)
+                .enter()
+                .append("text")
+                .text(d => d.categoria)
+                .attr("x", (d, i) => i * (ancho / datos.length) + (ancho / datos.length - 5) / 2)
+                .attr("y", alto + 15)
+                .attr("text-anchor", "middle");
+    
+            // Eje y
+            svg.append("g")
+                .call(d3.axisLeft(escalaY));
+        </script>
+    </body>
+    </html>
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualización de Datos</title>
+    <!-- Agrega la referencia a la biblioteca D3.js -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+</head>
+<body>
+
+    <h2>Impacto en el Mercado</h2>
+
+    <!-- Contenedor para la visualización de datos -->
+    <div id="grafico"></div>
+
+    <script>
+        // Datos de ejemplo (reemplázalos con datos reales)
+        const datos = [
+            { categoria: 'Categoría 1', valor: 30 },
+            { categoria: 'Categoría 2', valor: 50 },
+            { categoria: 'Categoría 3', valor: 20 }
+        ];
+
+        // Dimensiones del gráfico
+        const ancho = 400;
+        const alto = 300;
+
+        // Escala lineal para el eje y
+        const escalaY = d3.scaleLinear()
+            .domain([0, d3.max(datos, d => d.valor)])
+            .range([alto, 0]);
+
+        // Configuración del contenedor del gráfico
+        const svg = d3.select("#grafico")
+            .append("svg")
+            .attr("width", ancho)
+            .attr("height", alto);
+
+        // Barras del gráfico
+        svg.selectAll("rect")
+            .data(datos)
+            .enter()
+            .append("rect")
+            .attr("x", (d, i) => i * (ancho / datos.length))
+            .attr("y", d => escalaY(d.valor))
+            .attr("width", ancho / datos.length - 5)
+            .attr("height", d => alto - escalaY(d.valor))
+            .attr("fill", "blue");
+
+        // Eje x
+        svg.selectAll("text")
+            .data(datos)
+            .enter()
+            .append("text")
+            .text(d => d.categoria)
+            .attr("x", (d, i) => i * (ancho / datos.length) + (ancho / datos.length - 5) / 2)
+            .attr("y", alto + 15)
+            .attr("text-anchor", "middle");
+
+        // Eje y
+        svg.append("g")
+            .call(d3.axisLeft(escalaY));
+    </script>
+</body>
+</html>
+<section id="comentarios">
+    <h2>Comentarios de Clientes</h2>
+    <div id="comentarios-en-vivo">
+        <!-- Los comentarios se cargarían dinámicamente aquí -->
+    </div>
+</section>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta de Retroalimentación</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <section id="encuesta">
+        <h2>Encuesta de Retroalimentación</h2>
+        <p>Queremos conocer tu opinión sobre nuestros productos y servicios. ¡Tu retroalimentación es valiosa!</p>
+
+        <form action="procesar_encuesta.php" method="post">
+            <!-- Preguntas de la encuesta -->
+            <label for="pregunta1">1. ¿Cómo calificarías la calidad de nuestros productos?</label>
+            <select id="pregunta1" name="pregunta1">
+                <option value="excelente">Excelente</option>
+                <option value="bueno">Bueno</option>
+                <option value="regular">Regular</option>
+                <option value="malo">Malo</option>
+            </select>
+
+            <label for="pregunta2">2. ¿Qué mejorarías en nuestros servicios?</label>
+            <textarea id="pregunta2" name="pregunta2" rows="4" cols="50"></textarea>
+
+            <input type="submit" value="Enviar Encuesta">
+        </form>
+    </section>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+  
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidad - X BROWN TECNOLOGÍA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Política de Privacidad - X BROWN TECNOLOGÍA</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+    
+        <header>
+            <h1>Política de Privacidad</h1>
+        </header>
+    
+        <section>
+            <h2>1. Información recopilada y utilización:</h2>
+            <p>X BROWN TECNOLOGÍA recopila información personal proporcionada por los usuarios durante...</p>
+            <p>la utilización de nuestros servicios. Esta información puede incluir, pero no se limita a, nombres...</p>
+            <p>y direcciones de correo electrónico. Utilizamos esta información para mejorar continuamente nuestros...</p>
+            <p>productos y servicios, así como para responder eficazmente a las consultas y comentarios de los...</p>
+            <p>usuarios.</p>
+        </section>
+    
+        <section>
+            <h2>2. Cookies y tecnologías similares:</h2>
+            <p> ISMAEL BROWN ,Nuestro sitio web utiliza cookies y tecnologías similares para mejorar la experiencia del usuario...</p>
+            <p>al personalizar el contenido, proporcionar funciones de redes sociales y analizar nuestro tráfico. Al...</p>
+            <p>utilizar nuestro sitio web, usted acepta el uso de cookies de acuerdo con nuestra política de...</p>
+            <p>cookies.</p>
+        </section>
+    
+        <section>
+            <h2>3. Compartir información:</h2>
+            <p>X BROWN no comparte información personal con terceros, excepto cuando sea necesario...</p>
+            <p>para proporcionar servicios solicitados por el usuario o cuando la ley lo requiera. Nos comprometemos...</p>
+            <p>a proteger su privacidad y a garantizar que la información personal que comparta con nosotros esté...</p>
+            <p>segura.</p>
+        </section>
+    
+        <!-- Más secciones según sea necesario -->
+    
+        <section id="responsabilidad">
+            <h2>Responsabilidad y Compromiso de Ismael Brown</h2>
+            <p>Ismael Brown, fundador y líder de X BROWN, asume plenamente la responsabilidad por la...</p>
+            <p>protección de la privacidad de los usuarios. Como líder de la empresa, Ismael Brown está comprometido...</p>
+            <p>con el más alto nivel de ética y transparencia en todas las operaciones de la empresa.</p>
+            <p>Este compromiso se extiende a garantizar el desarrollo de productos y servicios que cumplen con los más...</p>
+            <p>rigurosos estándares de seguridad y privacidad. Ismael Brown reconoce la importancia de la confianza de...</p>
+            <p>los usuarios y trabaja incansablemente para mantener esa confianza a lo largo del tiempo.</p>
+            <p>La privacidad de nuestros usuarios es una prioridad fundamental para Ismael Brown, quien...</p>
+            <p>supervisa personalmente las políticas y prácticas de privacidad de la empresa. Cada decisión y acción en...</p>
+            <p>X BROWN  se toma con el objetivo de resguardar la privacidad y la seguridad de nuestros...</p>
+            <p>usuarios.</p>
+            <p>Estamos comprometidos a mantenernos actualizados con las mejores prácticas y estándares de...</p>
+            <p>seguridad de la industria. Ismael Brown lidera continuamente iniciativas de desarrollo y formación para...</p>
+            <p>garantizar que todos los miembros del equipo estén plenamente capacitados y actualizados en las últimas...</p>
+            <p>tecnologías y enfoques de seguridad.</p>
+        </section>
+    
+        <section id="desarrollo">
+            <h2>Desarrollo Continuo</h2>
+            <p>X BROWN  se encuentra en constante desarrollo y mejora en diversas áreas para ofrecer a...</p>
+            <p>nuestros usuarios la mejor experiencia posible. Estamos trabajando arduamente para implementar nuevas...</p>
+            <p>funcionalidades, mejorar la seguridad y proporcionar contenido relevante y actualizado.</p>
+            <p>Apreciamos la paciencia y comprensión de nuestros usuarios mientras trabajamos para hacer de X BROWN...</p>
+            <p>TECNOLOGÍA un destino aún más destacado en el mundo de la tecnologíco , por ultimo actualmente X BROWN ESTA EN DESARROLLO . SE ESTA TRABAJADON CONTINUAMENTE PARA MEJORAR. </p>
+        </section>
+    
+        <footer>
+            <p>&copy; 2024 TECNOLOGICO X BROWN. Todos los derechos reservados.</p>
+        </footer>
+    
+    </body>
+    </html>
+    
